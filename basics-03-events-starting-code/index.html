@@ -21,6 +21,8 @@
       <button v-on:click="addCounter(5)">Add 5</button>
       <!--only reduce Counter on right Click, good knowing for more infos on Web Applications-->
       <button v-on:click.right="reduceCounter(5)">Subtract 5</button>
+      <!--show initial value locked with v-once-->
+      <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <input type="text" v-on:input="setName($event, 'Mustermann')" v-on:keyup.enter="confirmInput">
       <p> Your Name: {{ confirmedName }} </p>
