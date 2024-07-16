@@ -19,10 +19,15 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="addCounter(5)">Add 5</button>
-      <button v-on:click="reduceCounter(5)">Subtract 5</button>
+      <!--only reduce Counter on right Click, good knowing for more infos on Web Applications-->
+      <button v-on:click.right="reduceCounter(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Mustermann')">
-      <p> Your Name: {{ name }} </p>
+      <input type="text" v-on:input="setName($event, 'Mustermann')" v-on:keyup.enter="confirmInput">
+      <p> Your Name: {{ confirmedName }} </p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
